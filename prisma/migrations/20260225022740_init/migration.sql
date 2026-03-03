@@ -1,0 +1,8 @@
+-- CreateTable
+CREATE TABLE "Invoice" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "customerId" TEXT NOT NULL,
+    "amount" REAL NOT NULL,
+    "status" TEXT NOT NULL DEFAULT 'PENDING',
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
