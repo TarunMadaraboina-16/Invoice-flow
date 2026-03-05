@@ -14,6 +14,7 @@ This project showcases senior‑level backend engineering concepts including bac
 </p>
 
 🚀 Architecture Overview
+
 InvoiceFlow is built as a distributed system with clear service boundaries:
 - API Service (Node.js + TypeScript)
 Receives invoice creation requests, validates input, applies rate limiting and idempotency, and enqueues jobs.
@@ -31,6 +32,7 @@ Client → API → Redis Queue → Worker → Postgres
 This architecture mirrors real production systems that need to handle high traffic and long‑running tasks without blocking API responses.
 
 🧩 Key Features
+
 - Asynchronous Invoice Processing
 Heavy work is offloaded to background workers for speed and reliability.
 - Rate Limiting
