@@ -10,20 +10,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    strategy:
+      matrix:
+        service: [api, worker]
 
-      - name: Setup Node.js
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js 18
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
       - name: Install dependencies
+        working-directory: ${{ matrix.service }}
         run: npm install
 
-      - name: TypeScript build check
-        run: npx tsc --noEmit
-
-      - name: Lint check
-        run: npx eslint . --ext .ts || true
+      - name: Build TypeScript
+        working-directory: ${{ matrix.service }}
+        run: npm run build
