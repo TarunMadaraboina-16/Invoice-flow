@@ -2,9 +2,9 @@ import { Queue } from "bullmq";
 import { RedisOptions } from "ioredis";
 
 const connection: RedisOptions = {
-  host: "127.0.0.1",
+  host: "redis",   // <— FIXED
   port: 6379,
-  maxRetriesPerRequest: null,   // REQUIRED for BullMQ
+  maxRetriesPerRequest: null,
 };
 
 export const invoiceQueue = new Queue("invoiceQueue", {

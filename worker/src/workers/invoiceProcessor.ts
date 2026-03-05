@@ -1,12 +1,5 @@
 import { Worker } from "bullmq";
-import { RedisOptions } from "ioredis";
 import { prisma } from "../db/prisma";
-
-const connection: RedisOptions = {
-  host: "127.0.0.1",
-  port: 6379,
-  maxRetriesPerRequest: null,   // REQUIRED
-};
 
 const worker = new Worker(
   "invoiceQueue",
@@ -23,7 +16,12 @@ const worker = new Worker(
 
     console.log(`Processed invoice for ${customerId}`);
   },
-  { connection }
+  {
+    connection: {
+      host: process.env.REDIS_HOST || "redis",
+      port: 6379
+    }
+  }
 );
 
 worker.on("completed", job => {
@@ -33,5 +31,3 @@ worker.on("completed", job => {
 worker.on("failed", (job, err) => {
   console.error(`Job ${job?.id} failed:`, err);
 });
-
-   
