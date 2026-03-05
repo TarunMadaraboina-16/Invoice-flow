@@ -4,6 +4,13 @@ InvoiceFlow is a scalable backend system built with Node.js, TypeScript, Express
 It demonstrates production-grade patterns used by companies like Stripe, Uber, and Goldman Sachs.
 
 ---
+<p align="left">
+  <img src="https://img.shields.io/badge/Node.js-18.x-green" />
+  <img src="https://img.shields.io/badge/TypeScript-5.x-blue" />
+  <img src="https://img.shields.io/badge/Redis-BullMQ-red" />
+  <img src="https://img.shields.io/badge/Postgres-15-blue" />
+  <img src="https://img.shields.io/badge/Docker-Compose-blue" />
+</p>
 
 ## Features
 - Asynchronous invoice processing using BullMQ
