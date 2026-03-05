@@ -1,4 +1,4 @@
-# InvoiceFlow- Asynchronous Invoice Processing System
+# InvoiceFlow - Distributed Invoice Processing System
 ![CI](https://github.com/TarunMadaraboina-16/Invoice-flow/actions/workflows/ci.yml/badge.svg)
 
 InvoiceFlow is a production‑style backend system designed to demonstrate real‑world distributed architecture patterns used by companies like Stripe, Uber, and Amazon. It processes invoices asynchronously using a queue‑based pipeline, enabling high throughput, fault tolerance, and horizontal scalability.
